@@ -4,37 +4,30 @@ import TextField from '@mui/material/TextField';
 import noteContext from "../context/notes/noteContext";
 import Button from '@mui/material/Button';
 import { useContext } from 'react';
-import { Description } from '@mui/icons-material';
-
-
 
 export default function BasicTextFields(props) {
-
-    const [note, setNote] = React.useState({title: '', description : '', tag : ''})
+  
     const context = useContext(noteContext);
     const {addNotes} = context;
 
+    const [note, setNote] = React.useState({title: '', description : '', tag : ''})
+    const onChange = (e)=>{
+      setNote({...note, [e.target.name]: e.target.value})    
+  }
+
     const handleClick = (e)=>{
-        e.preventDefault() //To Avoid page reload
+        e.preventDefault()
         addNotes(note.title, note.description, note.tag )
         setNote({title: '', description : '', tag : ''})
         props.showAlert("Added Sucessfully", "success")
 
     }
 
-    const onChange = (e)=>{
-
-        setNote({...note, [e.target.name]: e.target.value})
-        
-    }
-
   return (
     <>
     <Box style={{display: 'flex', flexDirection: 'column'}}
       component="form"
-      sx={{
-        '& > :not(style)': { m: 1, width: '100ch' },
-      }}
+      sx={{  '& > :not(style)': { m: 1, width: '100ch' },}}
       noValidate
       autoComplete="off"
     > 

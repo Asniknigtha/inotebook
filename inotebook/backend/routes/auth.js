@@ -4,7 +4,7 @@ const router = express.Router();
 const bcrypt = require ('bcryptjs')
 const {body, validationResult} = require('express-validator')
 var jwt = require('jsonwebtoken')
-const JWT_SECRET = "ankitaisgood"
+const JWT_SECRET = "makinginotebook"
 var fetchuser = require('../middleware/fetchuser')
 
 // ROUTE 1 : Create a user using: POST "/api/auth/createuser". No login required
@@ -22,7 +22,7 @@ body('password',"Password atleast must be 5 letters").isLength({min:5}),
     }
 
     try{
-           // check whether the user with this email exists already
+         // check whether the user with this email exists already
         let user = await User.findOne({email : req.body.email,})
         if(user){
             return res.status(400).json({ success, error: "Sorry a user with this email already exists"})
@@ -103,7 +103,6 @@ router.post('/login',[
         res.status(500).send("Internal server error")
     }
  }
-
  )
 
 module.exports = router
