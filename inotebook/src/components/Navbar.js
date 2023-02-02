@@ -136,6 +136,7 @@ export default function PrimarySearchAppBar() {
             </>
           ) : (
             <Button onClick={handleLogout}>Log Out</Button>
+
           )}
         </Toolbar>
       </AppBar>

@@ -14,21 +14,21 @@ const Noteitem = (props) => {
   const { note, updateNote } = props;
 
   return (
-    <div>
+    <div style={{margin : "10px"}}>
       <Card sx={{ width: 250 }}>
         <CardContent>
-          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+          <Typography  color="text.secondary" variant="h5" gutterBottom>
             Note item
           </Typography>
-          <Typography variant="h5" component="div">
+          <hr></hr>
+          <Typography variant="h5" gutterBottom >
             {note.title}
           </Typography>
           <Typography sx={{ mb: 1.5 }} color="text.secondary"></Typography>
           <Typography variant="body2">{note.description}</Typography>
         </CardContent>
-        <CardActions>
-          <Button size="small">Learn More</Button>
-          <Button
+        <CardActions >
+          <Button sx={{width : "5px" }}
             color="error"
             onClick={() => {
               deleteNotes(note._id);
@@ -38,7 +38,7 @@ const Noteitem = (props) => {
             {" "}
             <DeleteForeverIcon />
           </Button>
-          <Button
+          <Button  sx={{width : "5px" }}
             color="warning"
             onClick={() => {
               updateNote(note);

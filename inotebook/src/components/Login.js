@@ -93,7 +93,7 @@ const Login = (props) => {
           /> */}
           <Button
             type="submit"
-            color="primary"
+            color="error"
             variant="contained"
             style={btnstyle}
             fullWidth

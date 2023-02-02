@@ -68,9 +68,7 @@ const Notes = (props) => {
   return (
     <>
       <AddNotes showAlert={showAlert}></AddNotes>
-      <div style={{ display: "flex" }}>
-        <h2> Your Notes </h2>
-
+      <div style={{ display: "flex" , alignItems : "center" , justifyContent : "center", margin : "18px"}}>
         <div>
           <Button style={{ display: "none" }} ref={ref} onClick={handleOpen}>
             Open modal
@@ -133,7 +131,8 @@ const Notes = (props) => {
           </Modal>
         </div>
 
-        {notes.length === 0 && "No notes to display"}
+        {notes.length === 0 &&   <div style={{ display: "flex" , alignItems : "center" , fontFamily: "monospace", justifyContent : "center", margin : "18px" ,fontSize :'1rem'}}> 
+        No notes to display </div>}
         {notes.map((notes) => {
           return (
             <Noteitem
