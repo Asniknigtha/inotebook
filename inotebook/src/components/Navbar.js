@@ -62,7 +62,7 @@ export default function PrimarySearchAppBar() {
     <Box sx={{ flexGrow: 1 }} style={{ backgroundColor: "#333739 !important" }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             size="large"
             edge="start"
             color="inherit"
@@ -70,7 +70,7 @@ export default function PrimarySearchAppBar() {
             sx={{ mr: 2 }}
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
           <Typography
             variant="h6"
             noWrap
@@ -86,7 +86,7 @@ export default function PrimarySearchAppBar() {
             component="div"
             sx={{ display: { xs: "none", sm: "block" } }}
           >
-            <Link to="/" style={{ textDecorator: "none" }}>
+            <Link to="/home" style={{ textDecorator: "none" }}>
               {" "}
               Home
             </Link>
@@ -98,7 +98,7 @@ export default function PrimarySearchAppBar() {
             component="div"
             sx={{ display: { xs: "none", sm: "block" } }}
           >
-            <Link className="active" to="/about" selected>
+            <Link className="active" to="/" selected>
               {" "}
               About
             </Link>

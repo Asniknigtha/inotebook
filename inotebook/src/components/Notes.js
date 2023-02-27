@@ -131,18 +131,31 @@ const Notes = (props) => {
           </Modal>
         </div>
 
-        {notes.length === 0 &&   <div style={{ display: "flex" , alignItems : "center" , fontFamily: "monospace", justifyContent : "center", margin : "18px" ,fontSize :'1rem'}}> 
-        No notes to display </div>}
-        {notes.map((notes) => {
-          return (
-            <Noteitem
-              key={notes._id}
-              updateNote={updateNote}
-              showAlert={props.showAlert}
-              note={notes}
-            />
-          );
-        })}
+        
+      <div style={{ display: "flex" , alignItems : "center" ,  flexWrap : "wrap", fontFamily: "monospace", justifyContent : "flex-start", margin : "18px" ,fontSize :'1rem'}}> 
+       
+       {notes?.length === 0 ? <span>No notes to display</span> : (
+         <>
+         {notes.map((notes) => {
+            return (
+              <Noteitem
+                key={notes._id}
+                updateNote={updateNote}
+                showAlert={props.showAlert}
+                note={notes}
+              />
+            );
+          })   
+        }
+         </>
+
+       )}
+       
+       
+       
+      </div>
+      
+      
       </div>
     </>
   );

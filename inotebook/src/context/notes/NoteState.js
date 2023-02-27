@@ -6,21 +6,7 @@ const NoteState = (props) => {
 
   const host = "http://localhost:5000"
 
-    const s1 ={
-        "name": "Ankita",
-        "class": "5A"
-    }
 
-    const [state, setState] = React.useState(s1)
-
-    const update=()=>{
-        setTimeout(()=>{
-        setState({
-            "name ": "Singh",
-            "class" : "10b"
-        })
-        },2000)
-    }
 
     const notesInitial = []
     const [notes, setNotes] = React.useState(notesInitial);
@@ -96,7 +82,7 @@ const NoteState = (props) => {
 
 
   return (
-   <NoteContext.Provider value={{state,update,notes,setNotes,getNotes, addNotes, editNotes, deleteNotes}}>
+   <NoteContext.Provider value={{notes,setNotes,getNotes, addNotes, editNotes, deleteNotes}}>
     {props.children}
    </NoteContext.Provider>
   )

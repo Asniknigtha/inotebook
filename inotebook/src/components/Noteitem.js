@@ -14,7 +14,7 @@ const Noteitem = (props) => {
   const { note, updateNote } = props;
 
   return (
-    <div style={{margin : "10px"}}>
+    <div style={{margin : "10px", flexWrap:"wrap"}}>
       <Card sx={{ width: 250 }}>
         <CardContent>
           <Typography  color="text.secondary" variant="h5" gutterBottom>
